@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -7,7 +8,7 @@ import { toast } from "sonner";
 const Footer = () => {
   const handleNewsletterSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast.success("Thank you for subscribing to our newsletter!");
+    toast.success("Bültenimize abone olduğunuz için teşekkürler!");
     const form = e.currentTarget;
     form.reset();
   };
@@ -21,7 +22,7 @@ const Footer = () => {
               PrivacyPolicy.com
             </Link>
             <p className="text-muted-foreground max-w-xs">
-              Crafting premium outdoor apparel that helps you escape the city chaos and embrace nature's beauty.
+              Şehrin karmaşasından kaçmanıza ve doğanın güzelliğini kucaklamanıza yardımcı olan premium dış giyim ürünleri tasarlıyoruz.
             </p>
             <div className="flex space-x-3">
               <Button variant="ghost" size="icon" className="rounded-full hover:text-primary">
@@ -45,16 +46,21 @@ const Footer = () => {
 
           <div>
             <h3 className="text-sm font-medium uppercase tracking-wider text-muted-foreground mb-4">
-              Links
+              Bağlantılar
             </h3>
             <ul className="space-y-2">
-              {["Home", "About", "Products", "Contact"].map((item) => (
-                <li key={item}>
+              {[
+                { name: "Anasayfa", path: "/" },
+                { name: "Hakkımızda", path: "/about" },
+                { name: "Ürünler", path: "/products" },
+                { name: "İletişim", path: "/contact" }
+              ].map((item) => (
+                <li key={item.name}>
                   <Link 
-                    to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                    to={item.path}
                     className="text-foreground/80 hover:text-primary transition-colors"
                   >
-                    {item}
+                    {item.name}
                   </Link>
                 </li>
               ))}
@@ -63,16 +69,20 @@ const Footer = () => {
 
           <div>
             <h3 className="text-sm font-medium uppercase tracking-wider text-muted-foreground mb-4">
-              Legal
+              Yasal
             </h3>
             <ul className="space-y-2">
-              {["Privacy Policy", "Terms of Service", "Cookies"].map((item) => (
-                <li key={item}>
+              {[
+                { name: "Gizlilik Politikası", path: "#" },
+                { name: "Kullanım Şartları", path: "#" },
+                { name: "Çerezler", path: "#" }
+              ].map((item) => (
+                <li key={item.name}>
                   <Link 
-                    to="#"
+                    to={item.path}
                     className="text-foreground/80 hover:text-primary transition-colors"
                   >
-                    {item}
+                    {item.name}
                   </Link>
                 </li>
               ))}
@@ -81,33 +91,33 @@ const Footer = () => {
 
           <div>
             <h3 className="text-sm font-medium uppercase tracking-wider text-muted-foreground mb-4">
-              Subscribe
+              Abone Ol
             </h3>
             <p className="text-sm text-muted-foreground mb-4">
-              Subscribe to our newsletter for updates.
+              Güncellemeler için bültenimize abone olun.
             </p>
             <form onSubmit={handleNewsletterSubmit} className="space-y-2">
               <div className="flex">
                 <Input
                   type="email"
-                  placeholder="Email address"
+                  placeholder="E-posta adresiniz"
                   required
                   className="rounded-r-none focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0"
                 />
                 <Button type="submit" className="rounded-l-none">
                   <ArrowRight className="h-4 w-4" />
-                  <span className="sr-only">Subscribe</span>
+                  <span className="sr-only">Abone Ol</span>
                 </Button>
               </div>
               <p className="text-xs text-muted-foreground">
-                We respect your privacy. Unsubscribe at any time.
+                Gizliliğinize saygı duyuyoruz. İstediğiniz zaman abonelikten çıkabilirsiniz.
               </p>
             </form>
           </div>
         </div>
 
         <div className="mt-12 pt-8 border-t text-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} PrivacyPolicy.com. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} PrivacyPolicy.com. Tüm hakları saklıdır.</p>
         </div>
       </div>
     </footer>

@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -14,64 +15,64 @@ type Product = {
 const products: Product[] = [
   {
     id: 1,
-    name: "Forest Flannel Shirt",
-    description: "Relaxed fit flannel shirt perfect for cool evenings around the campfire.",
+    name: "Orman Flanel Gömlek",
+    description: "Kamp ateşi etrafındaki serin akşamlar için mükemmel, rahat kesim flanel gömlek.",
     category: "shirts",
     usage: ["camping", "hiking", "casual"]
   },
   {
     id: 2,
-    name: "Trail Cargo Pants",
-    description: "Loose-fitting cargo pants with multiple pockets for all your outdoor essentials.",
+    name: "Patika Kargo Pantolon",
+    description: "Tüm açık hava ihtiyaçlarınız için çoklu cepli, bol kesim kargo pantolon.",
     category: "pants",
     usage: ["hiking", "camping", "fishing"]
   },
   {
     id: 3,
-    name: "Mountain Explorer Shirt",
-    description: "Casual button-up shirt with roll-up sleeves for variable weather conditions.",
+    name: "Dağ Kaşifi Gömlek",
+    description: "Değişken hava koşulları için yukarı kıvrılabilir kollu, günlük düğmeli gömlek.",
     category: "shirts",
     usage: ["hiking", "photography", "travel"]
   },
   {
     id: 4,
-    name: "Campfire Graphic Tee",
-    description: "Soft cotton t-shirt with vintage campfire design, perfect for casual outdoor wear.",
+    name: "Kamp Ateşi Tişört",
+    description: "Günlük dış giyim için mükemmel, vintage kamp ateşi tasarımlı yumuşak pamuklu tişört.",
     category: "tshirts",
     usage: ["casual", "camping", "everyday"]
   },
   {
     id: 5,
-    name: "Adventure Bandana Set",
-    description: "Set of three versatile bandanas for sun protection, dust protection, or style.",
+    name: "Macera Bandana Seti",
+    description: "Güneş koruması, toz koruması veya stil için üç çok yönlü bandana seti.",
     category: "accessories",
     usage: ["protection", "style", "hiking"]
   },
   {
     id: 6,
-    name: "Relaxed Fit Hiking Pants",
-    description: "Comfortable, loose-fitting pants that allow full range of movement on the trail.",
+    name: "Rahat Kesim Yürüyüş Pantolonu",
+    description: "Patikada tam hareket serbestliği sağlayan rahat, bol kesim pantolon.",
     category: "pants",
     usage: ["hiking", "camping", "travel"]
   },
   {
     id: 7,
-    name: "Nature Escape Tee",
-    description: "Laid-back cotton t-shirt with mountain landscape design.",
+    name: "Doğa Kaçışı Tişört",
+    description: "Dağ manzarası tasarımlı rahat pamuklu tişört.",
     category: "tshirts",
     usage: ["casual", "everyday", "hiking"]
   },
   {
     id: 8,
-    name: "Wide Brim Explorer Hat",
-    description: "Comfortable hat with wide brim for sun protection during outdoor adventures.",
+    name: "Geniş Kenarlı Kaşif Şapka",
+    description: "Dış mekan maceralarında güneş koruması için geniş kenarlı rahat şapka.",
     category: "accessories",
     usage: ["sun protection", "hiking", "fishing"]
   },
   {
     id: 9,
-    name: "Oversized Denim Shirt",
-    description: "Roomy denim shirt that works as both a casual shirt or light jacket.",
+    name: "Oversize Denim Gömlek",
+    description: "Hem günlük gömlek hem de hafif ceket olarak işlev gören geniş denim gömlek.",
     category: "shirts",
     usage: ["layering", "cool weather", "casual"]
   },
@@ -116,15 +117,39 @@ const Products = () => {
     return () => observer.disconnect();
   }, [filteredProducts]);
 
+  const categoryMap: Record<string, string> = {
+    "all": "Tümü",
+    "shirts": "Gömlekler",
+    "pants": "Pantolonlar",
+    "tshirts": "Tişörtler",
+    "accessories": "Aksesuarlar"
+  };
+
+  const usageMap: Record<string, string> = {
+    "all": "Tüm Kullanımlar",
+    "hiking": "Doğa Yürüyüşü",
+    "camping": "Kamp",
+    "casual": "Günlük",
+    "travel": "Seyahat",
+    "fishing": "Balıkçılık",
+    "protection": "Koruma",
+    "style": "Stil",
+    "everyday": "Günlük",
+    "sun protection": "Güneş Koruması",
+    "layering": "Katmanlı Giyim",
+    "cool weather": "Serin Hava",
+    "photography": "Fotoğrafçılık"
+  };
+
   return (
     <div className="pt-28 pb-16 md:pt-36 md:pb-24">
       <section className="container mx-auto px-4 md:px-6 mb-16">
         <div className="max-w-3xl mx-auto text-center animate-blur-in">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-            Casual Outdoor Collection
+            Günlük Dış Giyim Koleksiyonu
           </h1>
           <p className="text-xl text-muted-foreground">
-            Comfortable, durable clothing designed for your adventures in nature.
+            Doğadaki maceralarınız için tasarlanmış rahat, dayanıklı kıyafetler.
           </p>
         </div>
       </section>
@@ -137,11 +162,11 @@ const Products = () => {
         >
           <div className="flex justify-center mb-8">
             <TabsList className="grid grid-cols-5 w-full max-w-xl">
-              <TabsTrigger value="all">All</TabsTrigger>
-              <TabsTrigger value="shirts">Shirts</TabsTrigger>
-              <TabsTrigger value="pants">Pants</TabsTrigger>
-              <TabsTrigger value="tshirts">T-Shirts</TabsTrigger>
-              <TabsTrigger value="accessories">Accessories</TabsTrigger>
+              <TabsTrigger value="all">Tümü</TabsTrigger>
+              <TabsTrigger value="shirts">Gömlekler</TabsTrigger>
+              <TabsTrigger value="pants">Pantolonlar</TabsTrigger>
+              <TabsTrigger value="tshirts">Tişörtler</TabsTrigger>
+              <TabsTrigger value="accessories">Aksesuarlar</TabsTrigger>
             </TabsList>
           </div>
         </Tabs>
@@ -153,12 +178,12 @@ const Products = () => {
         >
           <div className="flex justify-center mb-12">
             <TabsList className="grid grid-cols-6 w-full max-w-2xl">
-              <TabsTrigger value="all">All Uses</TabsTrigger>
-              <TabsTrigger value="hiking">Hiking</TabsTrigger>
-              <TabsTrigger value="camping">Camping</TabsTrigger>
-              <TabsTrigger value="casual">Casual</TabsTrigger>
-              <TabsTrigger value="travel">Travel</TabsTrigger>
-              <TabsTrigger value="fishing">Fishing</TabsTrigger>
+              <TabsTrigger value="all">Tüm Kullanımlar</TabsTrigger>
+              <TabsTrigger value="hiking">Doğa Yürüyüşü</TabsTrigger>
+              <TabsTrigger value="camping">Kamp</TabsTrigger>
+              <TabsTrigger value="casual">Günlük</TabsTrigger>
+              <TabsTrigger value="travel">Seyahat</TabsTrigger>
+              <TabsTrigger value="fishing">Balıkçılık</TabsTrigger>
             </TabsList>
           </div>
         </Tabs>
@@ -177,20 +202,20 @@ const Products = () => {
                 <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
                 <p className="text-muted-foreground mb-4">{product.description}</p>
                 <div className="mb-4">
-                  <span className="text-sm font-medium text-primary">Perfect for:</span>
+                  <span className="text-sm font-medium text-primary">Kullanım alanları:</span>
                   <div className="flex flex-wrap gap-1 mt-1">
                     {product.usage.map((use, i) => (
                       <span key={i} className="text-xs bg-muted px-2 py-1 rounded-full capitalize">
-                        {use}
+                        {usageMap[use] || use}
                       </span>
                     ))}
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
                   <div className="text-sm font-medium text-primary">
-                    {product.category.charAt(0).toUpperCase() + product.category.slice(1)}
+                    {categoryMap[product.category]}
                   </div>
-                  <Button variant="ghost" size="sm">View Details</Button>
+                  <Button variant="ghost" size="sm">Detayları Gör</Button>
                 </div>
               </div>
             </div>
@@ -201,47 +226,47 @@ const Products = () => {
       <section className="container mx-auto px-4 md:px-6 py-16 mt-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center animate-on-scroll opacity-0 translate-y-10">
-            Apparel Usage Guide
+            Giyim Kullanım Kılavuzu
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-card rounded-xl p-6 border animate-on-scroll opacity-0 translate-y-10">
-              <h3 className="text-xl font-semibold mb-4">Hiking & Trekking</h3>
+              <h3 className="text-xl font-semibold mb-4">Doğa Yürüyüşü</h3>
               <ul className="space-y-2 text-muted-foreground">
-                <li>• Loose-fitting shirts for better airflow</li>
-                <li>• Cargo pants with pockets for essentials</li>
-                <li>• Layered clothing for changing weather</li>
-                <li>• Wide-brimmed hats for sun protection</li>
-                <li>• Bandanas for multiple uses on the trail</li>
+                <li>• Daha iyi hava akışı için bol kesim gömlekler</li>
+                <li>• Gerekli eşyalar için cepli kargo pantolonlar</li>
+                <li>• Değişken hava durumu için katmanlı giyim</li>
+                <li>• Güneş koruması için geniş kenarlı şapkalar</li>
+                <li>• Patika üzerinde çoklu kullanım için bandanalar</li>
               </ul>
             </div>
             <div className="bg-card rounded-xl p-6 border animate-on-scroll opacity-0 translate-y-10" style={{ transitionDelay: "100ms" }}>
-              <h3 className="text-xl font-semibold mb-4">Camping & Relaxation</h3>
+              <h3 className="text-xl font-semibold mb-4">Kamp & Dinlenme</h3>
               <ul className="space-y-2 text-muted-foreground">
-                <li>• Flannel shirts for cool evening comfort</li>
-                <li>• Relaxed fit pants that don't restrict movement</li>
-                <li>• Graphic tees for casual daytime wear</li>
-                <li>• Durable fabrics that handle outdoor conditions</li>
-                <li>• Versatile pieces that work around the campsite</li>
+                <li>• Serin akşamlarda konfor için flanel gömlekler</li>
+                <li>• Hareketi kısıtlamayan rahat kesim pantolonlar</li>
+                <li>• Günlük giyim için grafik tişörtler</li>
+                <li>• Dış mekan koşullarını karşılayan dayanıklı kumaşlar</li>
+                <li>• Kamp alanında çalışan çok yönlü parçalar</li>
               </ul>
             </div>
             <div className="bg-card rounded-xl p-6 border animate-on-scroll opacity-0 translate-y-10" style={{ transitionDelay: "200ms" }}>
-              <h3 className="text-xl font-semibold mb-4">Travel & Exploration</h3>
+              <h3 className="text-xl font-semibold mb-4">Seyahat & Keşif</h3>
               <ul className="space-y-2 text-muted-foreground">
-                <li>• Wrinkle-resistant shirts for hassle-free packing</li>
-                <li>• Comfortable pants for long journeys</li>
-                <li>• Versatile pieces that work in multiple settings</li>
-                <li>• Layering options for different climates</li>
-                <li>• Lightweight items that pack down small</li>
+                <li>• Kolay paketleme için kırışmaya dayanıklı gömlekler</li>
+                <li>• Uzun yolculuklar için rahat pantolonlar</li>
+                <li>• Birden fazla ortamda çalışan çok yönlü parçalar</li>
+                <li>• Farklı iklimler için katmanlama seçenekleri</li>
+                <li>• Küçük paketlenebilen hafif ürünler</li>
               </ul>
             </div>
             <div className="bg-card rounded-xl p-6 border animate-on-scroll opacity-0 translate-y-10" style={{ transitionDelay: "300ms" }}>
-              <h3 className="text-xl font-semibold mb-4">Fishing & Water Activities</h3>
+              <h3 className="text-xl font-semibold mb-4">Balıkçılık & Su Aktiviteleri</h3>
               <ul className="space-y-2 text-muted-foreground">
-                <li>• Quick-drying materials for water exposure</li>
-                <li>• Sun protection for long days outdoors</li>
-                <li>• Shirts with roll-up sleeves for temperature control</li>
-                <li>• Hats with wide brims for face protection</li>
-                <li>• Pants with secure pockets for gear</li>
+                <li>• Su teması için hızlı kuruyan malzemeler</li>
+                <li>• Uzun dış mekan günleri için güneş koruması</li>
+                <li>• Sıcaklık kontrolü için yukarı kıvrılabilir kollu gömlekler</li>
+                <li>• Yüz koruması için geniş kenarlı şapkalar</li>
+                <li>• Ekipmanlar için güvenli cepli pantolonlar</li>
               </ul>
             </div>
           </div>
@@ -251,15 +276,15 @@ const Products = () => {
       <section className="container mx-auto px-4 md:px-6 py-16 mt-8">
         <div className="max-w-4xl mx-auto rounded-3xl p-8 md:p-12 glass-morphism shadow-glass animate-on-scroll opacity-0 translate-y-10">
           <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Vision</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Vizyonumuz</h2>
             <p className="text-xl text-muted-foreground mb-6 max-w-2xl mx-auto">
-              We create apparel that becomes more than just clothing—it becomes your companion for escaping the chaos of city life and connecting with nature.
+              Sadece giyim değil, şehir hayatının karmaşasından kaçmak ve doğayla bağlantı kurmak için size eşlik eden ürünler yaratıyoruz.
             </p>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Our goal is that once you experience the comfort and quality of our products, you'll make us your lifelong brand of choice for all your outdoor adventures.
+              Hedefimiz, ürünlerimizin rahatlığını ve kalitesini deneyimlediğinizde, tüm açık hava maceralarınız için yaşam boyu tercih edeceğiniz marka olmaktır.
             </p>
             <Button asChild size="lg" className="rounded-full">
-              <Link to="/contact">Join Our Community</Link>
+              <Link to="/contact">Topluluğumuza Katılın</Link>
             </Button>
           </div>
         </div>

@@ -13,10 +13,10 @@ const Navbar = () => {
   const location = useLocation();
 
   const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Products", path: "/products" },
-    { name: "Contact", path: "/contact" },
+    { name: "Anasayfa", path: "/" },
+    { name: "Hakkımızda", path: "/about" },
+    { name: "Ürünler", path: "/products" },
+    { name: "İletişim", path: "/contact" },
   ];
 
   useEffect(() => {
@@ -43,7 +43,7 @@ const Navbar = () => {
         <Link 
           to="/" 
           className="font-display text-xl md:text-2xl font-semibold tracking-tighter hover-float"
-          aria-label="Home"
+          aria-label="Anasayfa"
         >
           PrivacyPolicy.com
         </Link>
@@ -69,7 +69,7 @@ const Navbar = () => {
             size="icon"
             onClick={toggleTheme}
             className="ml-2 rounded-full"
-            aria-label="Toggle theme"
+            aria-label="Tema değiştir"
           >
             {theme === "light" ? (
               <Moon className="h-5 w-5" />
@@ -86,7 +86,7 @@ const Navbar = () => {
             size="icon"
             onClick={toggleTheme}
             className="mr-2 rounded-full"
-            aria-label="Toggle theme"
+            aria-label="Tema değiştir"
           >
             {theme === "light" ? (
               <Moon className="h-5 w-5" />
@@ -98,7 +98,7 @@ const Navbar = () => {
             variant="ghost"
             size="icon"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label="Menüyü aç/kapat"
             className="rounded-full"
           >
             {isMobileMenuOpen ? (

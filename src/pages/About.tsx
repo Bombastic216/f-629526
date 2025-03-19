@@ -28,10 +28,10 @@ const About = () => {
       <section className="container mx-auto px-4 md:px-6 mb-16 md:mb-24">
         <div className="max-w-3xl mx-auto text-center animate-blur-in">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-            Our Philosophy
+            Felsefemiz
           </h1>
           <p className="text-xl text-muted-foreground">
-            We believe in creating products that balance form and function, focusing on what truly matters.
+            Form ve işlevi dengeleyen, gerçekten önemli olana odaklanan ürünler yaratmaya inanıyoruz.
           </p>
         </div>
       </section>
@@ -44,16 +44,15 @@ const About = () => {
               <div className="rounded-2xl bg-muted aspect-square"></div>
             </div>
             <div className="space-y-6 animate-on-scroll opacity-0 translate-y-10">
-              <h2 className="text-3xl font-bold">Our Story</h2>
+              <h2 className="text-3xl font-bold">Hikayemiz</h2>
               <p className="text-muted-foreground">
-                Founded on the principles of minimalist design and thoughtful functionality, 
-                our journey began with a simple vision: to create digital experiences 
-                that respect both the user and the medium.
+                Minimalist tasarım ve düşünceli işlevsellik ilkeleri üzerine kurulmuş olan yolculuğumuz, 
+                basit bir vizyonla başladı: hem kullanıcıya hem de ortama saygı duyan dijital deneyimler yaratmak.
               </p>
               <p className="text-muted-foreground">
-                We draw inspiration from the timeless design philosophies that prioritize 
-                clarity, purpose, and attention to detail. Every project we undertake is 
-                approached with the belief that less is more, but only when what remains is essential.
+                Netlik, amaç ve detaylara dikkat etmeyi ön planda tutan zamansız tasarım felsefelerinden 
+                ilham alıyoruz. Üstlendiğimiz her projeye, azın daha fazla olduğuna dair inançla yaklaşıyoruz, 
+                ancak geriye kalan şey önemli olduğunda.
               </p>
             </div>
           </div>
@@ -64,33 +63,33 @@ const About = () => {
       <section className="container mx-auto px-4 md:px-6 py-12 md:py-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center animate-on-scroll opacity-0 translate-y-10">
-            Our Core Values
+            Temel Değerlerimiz
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "Simplicity",
-                description: "We embrace the power of simplicity, stripping away the unnecessary to focus on what truly matters."
+                title: "Sadelik",
+                description: "Gerçekten önemli olana odaklanmak için gereksiz olanı ortadan kaldırarak sadeliğin gücünü benimsiyoruz."
               },
               {
-                title: "Precision",
-                description: "Every pixel, interaction, and line of code is crafted with careful precision and purpose."
+                title: "Hassasiyet",
+                description: "Her piksel, etkileşim ve kod satırı titiz bir hassasiyet ve amaçla oluşturulur."
               },
               {
-                title: "Harmony",
-                description: "We seek balance between aesthetics and functionality, ensuring neither overshadows the other."
+                title: "Uyum",
+                description: "Estetik ve işlevsellik arasında, hiçbirinin diğerini gölgede bırakmadığından emin olarak denge arıyoruz."
               },
               {
-                title: "Innovation",
-                description: "While respecting established patterns, we continuously explore new approaches that enhance user experiences."
+                title: "Yenilik",
+                description: "Yerleşik kalıplara saygı duyarken, kullanıcı deneyimlerini geliştiren yeni yaklaşımları sürekli olarak keşfediyoruz."
               },
               {
-                title: "Transparency",
-                description: "Clear communication and honest design principles guide our relationships with clients and users."
+                title: "Şeffaflık",
+                description: "Açık iletişim ve dürüst tasarım prensipleri, müşteriler ve kullanıcılarla ilişkilerimize rehberlik eder."
               },
               {
-                title: "Quality",
-                description: "We never compromise on quality, believing that excellence in execution honors the design vision."
+                title: "Kalite",
+                description: "Kaliteden asla ödün vermiyoruz, mükemmel uygulamanın tasarım vizyonuna saygı duyduğuna inanıyoruz."
               }
             ].map((value, index) => (
               <div 
@@ -110,16 +109,16 @@ const About = () => {
       <section className="container mx-auto px-4 md:px-6 py-12 md:py-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center animate-on-scroll opacity-0 translate-y-10">
-            Our Team
+            Ekibimiz
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { name: "Alex Thompson", role: "Creative Director" },
-              { name: "Sara Chen", role: "Lead Designer" },
-              { name: "Mark Williams", role: "UI Developer" },
-              { name: "Jordan Lee", role: "UX Researcher" },
-              { name: "Maya Rodriguez", role: "Motion Designer" },
-              { name: "David Kim", role: "Frontend Engineer" }
+              { name: "Ali Yılmaz", role: "Kreatif Direktör" },
+              { name: "Zeynep Kaya", role: "Baş Tasarımcı" },
+              { name: "Mehmet Öz", role: "UI Geliştirici" },
+              { name: "Deniz Şahin", role: "UX Araştırmacısı" },
+              { name: "Elif Demir", role: "Hareket Tasarımcısı" },
+              { name: "Can Yıldırım", role: "Frontend Mühendisi" }
             ].map((member, index) => (
               <div 
                 key={index} 

@@ -14,10 +14,10 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
+    // Form gönderimini simüle et
     setTimeout(() => {
       setIsSubmitting(false);
-      toast.success("Your message has been sent! We'll get back to you soon.");
+      toast.success("Mesajınız gönderildi! En kısa sürede size geri döneceğiz.");
       (e.target as HTMLFormElement).reset();
     }, 1500);
   };
@@ -28,10 +28,10 @@ const Contact = () => {
       <section className="container mx-auto px-4 md:px-6 mb-16">
         <div className="max-w-3xl mx-auto text-center animate-blur-in">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-            Get in Touch
+            İletişime Geçin
           </h1>
           <p className="text-xl text-muted-foreground">
-            We'd love to hear from you. Reach out and let's start a conversation.
+            Sizden haber almayı çok isteriz. Bize ulaşın ve bir sohbet başlatalım.
           </p>
         </div>
       </section>
@@ -42,7 +42,7 @@ const Contact = () => {
           <div className="grid md:grid-cols-5 gap-12">
             {/* Contact Information */}
             <div className="md:col-span-2 animate-slide-up">
-              <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
+              <h2 className="text-2xl font-bold mb-6">İletişim Bilgileri</h2>
               
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
@@ -50,8 +50,8 @@ const Contact = () => {
                     <Mail className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="font-medium">Email</h3>
-                    <p className="text-muted-foreground">hello@merhaba.com</p>
+                    <h3 className="font-medium">E-posta</h3>
+                    <p className="text-muted-foreground">merhaba@privacypolicy.com</p>
                   </div>
                 </div>
                 
@@ -60,8 +60,8 @@ const Contact = () => {
                     <Phone className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="font-medium">Phone</h3>
-                    <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                    <h3 className="font-medium">Telefon</h3>
+                    <p className="text-muted-foreground">+90 (555) 123-4567</p>
                   </div>
                 </div>
                 
@@ -70,22 +70,22 @@ const Contact = () => {
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="font-medium">Address</h3>
+                    <h3 className="font-medium">Adres</h3>
                     <p className="text-muted-foreground">
-                      123 Design Street<br />
-                      New York, NY 10001<br />
-                      United States
+                      Tasarım Caddesi No: 123<br />
+                      Beyoğlu, İstanbul<br />
+                      Türkiye
                     </p>
                   </div>
                 </div>
               </div>
               
               <div className="mt-12">
-                <h3 className="text-lg font-medium mb-4">Office Hours</h3>
+                <h3 className="text-lg font-medium mb-4">Çalışma Saatleri</h3>
                 <div className="space-y-2 text-muted-foreground">
-                  <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                  <p>Saturday: 10:00 AM - 4:00 PM</p>
-                  <p>Sunday: Closed</p>
+                  <p>Pazartesi - Cuma: 09:00 - 18:00</p>
+                  <p>Cumartesi: 10:00 - 16:00</p>
+                  <p>Pazar: Kapalı</p>
                 </div>
               </div>
             </div>
@@ -93,33 +93,33 @@ const Contact = () => {
             {/* Contact Form */}
             <div className="md:col-span-3 animate-slide-up delay-100">
               <div className="bg-card rounded-xl border p-6 md:p-8">
-                <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
+                <h2 className="text-2xl font-bold mb-6">Bize Mesaj Gönderin</h2>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="firstName">First Name</Label>
+                      <Label htmlFor="firstName">Ad</Label>
                       <Input id="firstName" required />
                     </div>
                     
                     <div className="space-y-2">
-                      <Label htmlFor="lastName">Last Name</Label>
+                      <Label htmlFor="lastName">Soyad</Label>
                       <Input id="lastName" required />
                     </div>
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
+                    <Label htmlFor="email">E-posta</Label>
                     <Input id="email" type="email" required />
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="subject">Subject</Label>
+                    <Label htmlFor="subject">Konu</Label>
                     <Input id="subject" required />
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
+                    <Label htmlFor="message">Mesaj</Label>
                     <Textarea id="message" rows={5} required />
                   </div>
                   
@@ -130,12 +130,12 @@ const Contact = () => {
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                         </svg>
-                        Sending...
+                        Gönderiliyor...
                       </span>
                     ) : (
                       <span className="flex items-center">
                         <Send className="mr-2 h-4 w-4" />
-                        Send Message
+                        Mesaj Gönder
                       </span>
                     )}
                   </Button>
