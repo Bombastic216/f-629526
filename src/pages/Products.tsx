@@ -1,7 +1,7 @@
-
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Link } from "react-router-dom";
 
 type Product = {
   id: number;
@@ -85,12 +85,10 @@ const Products = () => {
   useEffect(() => {
     let filtered = products;
     
-    // Filter by category
     if (activeCategory !== "all") {
       filtered = filtered.filter((product) => product.category === activeCategory);
     }
     
-    // Filter by usage
     if (activeUsage !== "all") {
       filtered = filtered.filter((product) => product.usage.includes(activeUsage));
     }
@@ -120,7 +118,6 @@ const Products = () => {
 
   return (
     <div className="pt-28 pb-16 md:pt-36 md:pb-24">
-      {/* Hero Section */}
       <section className="container mx-auto px-4 md:px-6 mb-16">
         <div className="max-w-3xl mx-auto text-center animate-blur-in">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
@@ -132,7 +129,6 @@ const Products = () => {
         </div>
       </section>
 
-      {/* Category Tabs */}
       <section className="container mx-auto px-4 md:px-6">
         <Tabs 
           defaultValue="all" 
@@ -150,7 +146,6 @@ const Products = () => {
           </div>
         </Tabs>
         
-        {/* Usage Tabs */}
         <Tabs 
           defaultValue="all" 
           className="animate-fade-in mb-12"
@@ -168,7 +163,6 @@ const Products = () => {
           </div>
         </Tabs>
 
-        {/* Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProducts.map((product, index) => (
             <div 
@@ -204,7 +198,6 @@ const Products = () => {
         </div>
       </section>
 
-      {/* Usage Guide Section */}
       <section className="container mx-auto px-4 md:px-6 py-16 mt-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center animate-on-scroll opacity-0 translate-y-10">
@@ -255,7 +248,6 @@ const Products = () => {
         </div>
       </section>
 
-      {/* Brand Vision Section */}
       <section className="container mx-auto px-4 md:px-6 py-16 mt-8">
         <div className="max-w-4xl mx-auto rounded-3xl p-8 md:p-12 glass-morphism shadow-glass animate-on-scroll opacity-0 translate-y-10">
           <div className="text-center">
