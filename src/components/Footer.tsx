@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -19,10 +18,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="space-y-4">
             <Link to="/" className="font-display text-xl font-semibold tracking-tighter hover-float">
-              Merhaba
+              PrivacyPolicy.com
             </Link>
             <p className="text-muted-foreground max-w-xs">
-              Creating minimalist, elegant designs with attention to detail and focus on user experience.
+              Crafting premium outdoor apparel that helps you escape the city chaos and embrace nature's beauty.
             </p>
             <div className="flex space-x-3">
               <Button variant="ghost" size="icon" className="rounded-full hover:text-primary">
@@ -108,7 +107,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-12 pt-8 border-t text-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} Merhaba. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} PrivacyPolicy.com. All rights reserved.</p>
         </div>
       </div>
     </footer>

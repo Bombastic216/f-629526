@@ -45,7 +45,7 @@ const Navbar = () => {
           className="font-display text-xl md:text-2xl font-semibold tracking-tighter hover-float"
           aria-label="Home"
         >
-          Merhaba
+          PrivacyPolicy.com
         </Link>
 
         {/* Desktop Navigation */}
